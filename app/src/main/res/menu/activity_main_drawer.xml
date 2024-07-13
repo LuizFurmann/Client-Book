@@ -6,8 +6,8 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_gym"
-            android:title="Treinos" />
+            android:id="@+id/nav_client"
+            android:title="Clientes" />
 
         <item
             android:id="@+id/nav_auto_training"
