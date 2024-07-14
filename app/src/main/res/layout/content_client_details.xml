@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/border_details"
+        android:orientation="vertical"
+        android:padding="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lbOrderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Númedo da ordem"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintHorizontal_bias="0.00"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOrderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="15"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderNumber"
+            app:layout_constraintTop_toBottomOf="@id/lbOrderNumber" />
+
+        <TextView
+            android:id="@+id/lblOrderSector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Setor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.193"
+            app:layout_constraintStart_toEndOf="@+id/guideline1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvOrderSector"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Montagem"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lblOrderSector"
+            app:layout_constraintTop_toBottomOf="@+id/lblOrderSector" />
+
+        <TextView
+            android:id="@+id/lbOrderMachine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Máquina"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber" />
+
+        <TextView
+            android:id="@+id/tvOrderMachine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Montagem"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderMachine"
+            app:layout_constraintTop_toBottomOf="@id/lbOrderMachine" />
+
+        <TextView
+            android:id="@+id/lbOrderMechanical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mecânico"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lblOrderSector"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderSector" />
+
+        <TextView
+            android:id="@+id/tvOrderMechanical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Refiladeira"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderMechanical"
+            app:layout_constraintTop_toBottomOf="@+id/lbOrderMechanical" />
+
+        <TextView
+            android:id="@+id/lbOrderResponsible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Responsável"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="40dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderMachine" />
+
+        <TextView
+            android:id="@+id/tvOrderResponsible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Gerente do setor"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderResponsible"
+            app:layout_constraintTop_toBottomOf="@id/lbOrderResponsible" />
+
+        <TextView
+            android:id="@+id/lbOrderType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderResponsible" />
+
+        <TextView
+            android:id="@+id/tvOrderType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Tipo"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderResponsible"
+            app:layout_constraintTop_toBottomOf="@id/lbOrderType" />
+
+        <TextView
+            android:id="@+id/lbOrderPrioriry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridade"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lblOrderSector"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderMechanical" />
+
+        <TextView
+            android:id="@+id/tvOrderPriority"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sem tensão"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderPrioriry"
+            app:layout_constraintTop_toBottomOf="@+id/lbOrderPrioriry" />
+
+        <TextView
+            android:id="@+id/lbOrderTension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tensão"
+            android:layout_marginTop="15dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lblOrderSector"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderPriority" />
+
+        <TextView
+            android:id="@+id/tvOrderTension"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sem tensão"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderTension"
+            app:layout_constraintTop_toBottomOf="@+id/lbOrderTension" />
+
+        <TextView
+            android:id="@+id/lbPatrimonio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Patrimônio"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderType" />
+
+        <TextView
+            android:id="@+id/tvPatrimonio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="45625"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderService"
+            app:layout_constraintTop_toBottomOf="@+id/lbPatrimonio" />
+
+        <TextView
+            android:id="@+id/lbOrderService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Descrição do serviço"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvPatrimonio" />
+
+        <TextView
+            android:id="@+id/tvOrderService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Descrição do serviço"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/lbOrderService"
+            app:layout_constraintTop_toBottomOf="@+id/lbOrderService"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5096661" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/white"
+        android:text=" Detalhes do cliente"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
