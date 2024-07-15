@@ -9,6 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.clientbook.R
 import com.example.clientbook.databinding.ActivityMainBinding
+import com.example.clientbook.network.RetrofitRepository
 import com.example.clientbook.view.clients.ClientActivity
 import com.google.android.material.navigation.NavigationView
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var binding : ActivityMainBinding
+    var repository = RetrofitRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupDrawer()
+        repository.getClient().value
     }
 
     private fun setupDrawer(){

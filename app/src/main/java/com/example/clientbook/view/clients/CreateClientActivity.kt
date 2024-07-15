@@ -1,35 +1,25 @@
 package com.example.clientbook.view.clients
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.clientbook.R
-import com.example.clientbook.databinding.ActivityClientBinding
+import com.example.clientbook.databinding.ActivityClientDetailsBinding
+import com.example.clientbook.databinding.ActivityCreateClientBinding
 
-class ClientActivity : AppCompatActivity() {
+class CreateClientActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityClientBinding
+    private lateinit var binding : ActivityCreateClientBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityClientBinding.inflate(layoutInflater)
+        binding = ActivityCreateClientBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         setupToolbar()
-        clickEvents()
-    }
-
-    private fun clickEvents(){
-        binding.fabNewClient.setOnClickListener {
-            addNewClient()
-        }
-    }
-
-    private fun addNewClient(){
-        Intent(this@ClientActivity, CreateClientActivity::class.java).also{
-            startActivity(it)
-        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
