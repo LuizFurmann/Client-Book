@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/taskToday"
+        android:enabled="true"
+        android:icon="@drawable/ic_add"
+        android:title="Hoje"/>
+    <item
+        android:id="@+id/month"
+        android:icon="@drawable/ic_add"
+        android:title="Calendário"/>
+
+</menu>

@@ -1,4 +1,4 @@
-package com.example.clientbook.view.clients;
+package com.example.clientbook.view.product;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.UserViewHolder>implements Filterable {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.UserViewHolder>implements Filterable {
 
     private List<Client> listItems = new ArrayList<>();
     private List<Client> listItemsFiltered = new ArrayList<>();

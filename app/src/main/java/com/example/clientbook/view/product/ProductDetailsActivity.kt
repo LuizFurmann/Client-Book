@@ -1,4 +1,4 @@
-package com.example.clientbook.view.clients
+package com.example.clientbook.view.product
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.clientbook.R
 import com.example.clientbook.databinding.ActivityClientDetailsBinding
 
-class ClientDetailsActivity : AppCompatActivity() {
+class ProductDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityClientDetailsBinding
 

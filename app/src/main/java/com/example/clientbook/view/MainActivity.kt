@@ -7,10 +7,14 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.clientbook.R
 import com.example.clientbook.databinding.ActivityMainBinding
 import com.example.clientbook.network.RetrofitRepository
-import com.example.clientbook.view.clients.ClientActivity
+import com.example.clientbook.view.favorite.FavoriteFragment
+import com.example.clientbook.view.home.HomeFragment
+import com.example.clientbook.view.product.ProductActivity
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupDrawer()
+        openFragment(HomeFragment())
+        bottomNavigation()
         repository.getClient().value
     }
 
@@ -49,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startClientActivity(){
-        Intent(this@MainActivity, ClientActivity::class.java).also{
+        Intent(this@MainActivity, ProductActivity::class.java).also{
             startActivity(it)
         }
     }
@@ -58,6 +64,30 @@ class MainActivity : AppCompatActivity() {
         if (toggle.onOptionsItemSelected(item))
             return true
         return super.onOptionsItemSelected(item)
+    }
+
+
+    private fun bottomNavigation(){
+        binding.appHomeMain.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.taskToday -> {
+                    openFragment(HomeFragment())
+                    true
+                }
+                R.id.month -> {
+                    openFragment(FavoriteFragment())
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        transaction.replace(binding.appHomeMain.container.id, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 }
