@@ -4,39 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.home.HomeFragment">
+    tools:context=".view.home.HomeFragment"
+    >
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvSearchProduct"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchBoxContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:hintEnabled="false"
+        android:layout_height="60dp"
+        android:background="@color/teal_700"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvSearchProduct"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:drawableEnd="@drawable/ic_search"
-            android:background="@drawable/shape_round"
-            android:paddingEnd="10dp"
-            android:paddingStart="20dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:hint="Pesquisar"
-            android:lines="1"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="Widget.MaterialComponents.TextInputEditText.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_round"
+                android:drawableEnd="@drawable/ic_search"
+                android:paddingStart="20dp"
+                android:paddingEnd="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/imageRV"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/tvSearchProduct"
+        app:layout_constraintTop_toBottomOf="@+id/searchBoxContainer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
