@@ -30,13 +30,12 @@
             android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/imgBanner"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imageRV"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="10dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/banner"
+        android:layout_marginTop="20dp"
+        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/tvSearchProduct"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
