@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clientbook.R
 import com.example.clientbook.databinding.FragmentHomeBinding
 import com.example.clientbook.model.Carousel
+import com.example.clientbook.model.Product
 import java.util.UUID
 
 class HomeFragment : Fragment() {
@@ -18,6 +20,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val carouselAdapter = CarouselAdapter()
+    private val bestSaleAdapter = BestSaleAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,11 +34,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupCarousel()
+        setupBestSale()
     }
 
     private fun setupCarousel(){
 
-        val imageRV = binding.imageRV
+        val imageRV = binding.rvCarousel
 
         val imageList = arrayListOf(
             Carousel(
@@ -63,6 +67,58 @@ class HomeFragment : Fragment() {
         val imageAdapter = CarouselAdapter()
         imageRV.adapter = imageAdapter
         imageAdapter.submitList(imageList)
+    }
+
+    private fun setupBestSale(){
+        val rvBestSale = binding.rvBestSale
+
+        val productList = arrayListOf(
+            Product(
+                UUID.randomUUID().toString(),
+                "Produto 1",
+                "Detalhes do produto",
+                "Tipo A",
+                100.00,
+                true
+            ),
+            Product(
+                UUID.randomUUID().toString(),
+                "Produto 2",
+                "Detalhes do produto",
+                "Tipo B",
+                70.00,
+                false
+            ),
+            Product(
+                UUID.randomUUID().toString(),
+                "Produto 3",
+                "Detalhes do produto",
+                "Tipo 5",
+                150.00,
+                true
+            ),
+        )
+
+
+
+        val layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvBestSale.layoutManager = layoutManager;
+        binding.rvBestSale.adapter = bestSaleAdapter
+        binding.rvBestSale.setHasFixedSize(true)
+
+        updateList(productList)
+    }
+
+    private fun updateList(productList: List<Product>) {
+        if (productList.isEmpty()) {
+
+//            binding.rvExercise.visibility = View.GONE
+//            binding.myExercisesTittle.visibility = View.GONE
+//            binding.emptyExerciseList.visibility = View.VISIBLE
+        } else {
+
+            bestSaleAdapter.updateList(productList)
+        }
     }
 
 }
