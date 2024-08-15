@@ -17,13 +17,13 @@
         android:theme="@style/Theme.ClientBook"
         tools:targetApi="31">
         <activity
-            android:name=".view.product.CreateProductActivity"
+            android:name=".view.purchase.CreateProductActivity"
             android:exported="false" />
         <activity
-            android:name=".view.product.ProductDetailsActivity"
+            android:name=".view.purchase.ProductDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.product.ProductActivity"
+            android:name=".view.purchase.PurchaseActivity"
             android:exported="false" />
         <activity
             android:name=".view.SplashActivity"

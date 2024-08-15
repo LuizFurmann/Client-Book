@@ -1,4 +1,4 @@
-package com.example.clientbook.view.product
+package com.example.clientbook.view.purchase
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,16 +8,16 @@ import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clientbook.databinding.RowClientBinding
-import com.example.clientbook.model.Client
+import com.example.clientbook.model.Product
 import java.util.Locale
 
 class ItemAdapter : RecyclerView.Adapter<ItemAdapter.UserViewHolder>(), Filterable {
-    private val listItems: MutableList<Client>? = ArrayList()
-    private val listItemsFiltered: MutableList<Client> = ArrayList()
+    private val listItems: MutableList<Product>? = ArrayList()
+    private val listItemsFiltered: MutableList<Product> = ArrayList()
 
     var context: Context? = null
 
-    fun setListItems(listItems: List<Client>?) {
+    fun setListItems(listItems: List<Product>?) {
         if (this.listItems!!.size > 0) {
             this.listItems.clear()
             listItemsFiltered.clear()
@@ -49,7 +49,7 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.UserViewHolder>(), Filterab
     private val FilterUser: Filter = object : Filter() {
         override fun performFiltering(charSequence: CharSequence): FilterResults {
             val searchText = charSequence.toString().lowercase(Locale.getDefault())
-            val newList: MutableList<Client> = ArrayList()
+            val newList: MutableList<Product> = ArrayList()
             if (searchText.length == 0 || searchText.isEmpty()) {
                 newList.addAll(listItemsFiltered)
             } else {
@@ -66,7 +66,7 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.UserViewHolder>(), Filterab
 
         override fun publishResults(charSequence: CharSequence, filterResults: FilterResults) {
             listItems!!.clear()
-            listItems.addAll((filterResults.values as Collection<Client>))
+            listItems.addAll((filterResults.values as Collection<Product>))
             notifyDataSetChanged()
         }
     }

@@ -14,7 +14,7 @@ import com.example.clientbook.databinding.ActivityMainBinding
 import com.example.clientbook.network.RetrofitRepository
 import com.example.clientbook.view.favorite.FavoriteFragment
 import com.example.clientbook.view.home.HomeFragment
-import com.example.clientbook.view.product.ProductActivity
+import com.example.clientbook.view.purchase.PurchaseActivity
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startClientActivity(){
-        Intent(this@MainActivity, ProductActivity::class.java).also{
+        Intent(this@MainActivity, PurchaseActivity::class.java).also{
             startActivity(it)
         }
     }
@@ -70,11 +70,11 @@ class MainActivity : AppCompatActivity() {
     private fun bottomNavigation(){
         binding.appHomeMain.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.taskToday -> {
+                R.id.homeId -> {
                     openFragment(HomeFragment())
                     true
                 }
-                R.id.month -> {
+                R.id.purchasesId -> {
                     openFragment(FavoriteFragment())
                     true
                 }
