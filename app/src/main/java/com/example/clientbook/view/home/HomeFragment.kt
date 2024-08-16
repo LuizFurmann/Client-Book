@@ -1,18 +1,21 @@
 package com.example.clientbook.view.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.clientbook.R
 import com.example.clientbook.databinding.FragmentHomeBinding
 import com.example.clientbook.model.Carousel
 import com.example.clientbook.model.Product
 import java.util.UUID
+
 
 class HomeFragment : Fragment() {
 
@@ -33,6 +36,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setHasOptionsMenu(true);
+
         setupCarousel()
         setupBestSale()
     }
@@ -45,23 +50,18 @@ class HomeFragment : Fragment() {
             Carousel(
                 UUID.randomUUID().toString(),
                 "PRIMEIRA",
-                "https://fastly.picsum.photos/id/866/500/500.jpg?hmac=FOptChXpmOmfR5SpiL2pp74Yadf1T_bRhBF1wJZa9hg"
+                "https://i.postimg.cc/Vdbzgg06/banner1.jpg"
             ),
             Carousel(
                 UUID.randomUUID().toString(),
                 "segunda",
-                "https://fastly.picsum.photos/id/270/500/500.jpg?hmac=MK7XNrBrZ73QsthvGaAkiNoTl65ZDlUhEO-6fnd-ZnY"
+                "https://i.postimg.cc/cJ4pdXL8/banner2.jpg"
             ),
             Carousel(
                 UUID.randomUUID().toString(),
                 "terceira",
-                "https://fastly.picsum.photos/id/320/500/500.jpg?hmac=2iE7TIF9kIqQOHrIUPOJx2wP1CJewQIZBeMLIRrm74s"
+                "https://i.postimg.cc/PxvFqcsN/banner3.jpg"
             ),
-            Carousel(
-                UUID.randomUUID().toString(),
-                "quarta",
-                "https://fastly.picsum.photos/id/798/500/500.jpg?hmac=Bmzk6g3m8sUiEVHfJWBscr2DUg8Vd2QhN7igHBXLLfo"
-            )
         )
 
         val imageAdapter = CarouselAdapter()
@@ -121,4 +121,20 @@ class HomeFragment : Fragment() {
         }
     }
 
+    @Override
+    override //For Fragments.
+     fun onCreateOptionsMenu (menu:Menu, inflater:MenuInflater){
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_cart, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.getItemId()) {
+            R.id.idCard -> {
+                Toast.makeText(requireContext(), "Carrinho", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

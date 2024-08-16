@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.favorite.FavoriteFragment">
+    tools:context=".view.purchase.PurchaseFragment">
 
     <TextView
         android:id="@+id/tvTitlePurchase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Favoritos"
+        android:text="Minhas compras"
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:textAlignment="center"

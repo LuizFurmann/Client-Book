@@ -3,18 +3,21 @@ package com.example.clientbook.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.MutableLiveData
 import com.example.clientbook.R
 import com.example.clientbook.databinding.ActivityMainBinding
 import com.example.clientbook.network.RetrofitRepository
 import com.example.clientbook.view.favorite.FavoriteFragment
 import com.example.clientbook.view.home.HomeFragment
 import com.example.clientbook.view.purchase.PurchaseActivity
+import com.example.clientbook.view.purchase.PurchaseFragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        setTitle("")
 
         setupDrawer()
         openFragment(HomeFragment())
@@ -63,6 +67,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item))
             return true
+
         return super.onOptionsItemSelected(item)
     }
 
@@ -75,6 +80,10 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.purchasesId -> {
+                    openFragment(PurchaseFragment())
+                    true
+                }
+                R.id.favoritId -> {
                     openFragment(FavoriteFragment())
                     true
                 }

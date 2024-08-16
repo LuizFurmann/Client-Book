@@ -3,9 +3,12 @@ package com.example.clientbook.view.home
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.clientbook.R
 import com.example.clientbook.databinding.RowBestSaleBinding
 import com.example.clientbook.databinding.RowClientBinding
 import com.example.clientbook.model.Carousel
@@ -29,8 +32,26 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
     }
 
     override fun onBindViewHolder(holder: BestSaleAdapter.BestSaleViewHolder, position: Int) {
-        val currentItem = listProduct[position]
+        var currentItem = listProduct[position]
         holder.bindData(currentItem)
+
+        if(currentItem.favorite){
+            holder.btnFavorite.setImageResource(R.drawable.ic_favorite_false)
+            currentItem.favorite = false
+        }else{
+            holder.btnFavorite.setImageResource(R.drawable.ic_favorite_true)
+            currentItem.favorite = true
+        }
+
+        holder.btnFavorite.setOnClickListener {
+            if(currentItem.favorite){
+                holder.btnFavorite.setImageResource(R.drawable.ic_favorite_false)
+                currentItem.favorite = false
+            }else{
+                holder.btnFavorite.setImageResource(R.drawable.ic_favorite_true)
+                currentItem.favorite = true
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -39,6 +60,7 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
 
     inner class BestSaleViewHolder(binding: RowBestSaleBinding) : RecyclerView.ViewHolder(binding.getRoot()) {
         var tvProductName: TextView = binding.tvProductName
+        var btnFavorite: ImageView = binding.btnFavorite
 
         fun bindData(item: Product){
             tvProductName.setText(item.name)

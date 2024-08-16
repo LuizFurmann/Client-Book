@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName
 
 data class Product(
 //    @SerializedName("productId")
-    val productId: String,
-    val name: String,
-    val details: String,
-    val type: String,
-    val price: Double,
-    val favorite: Boolean,
+    var productId: String,
+    var name: String,
+    var details: String,
+    var type: String,
+    var price: Double,
+    var favorite: Boolean,
 )
