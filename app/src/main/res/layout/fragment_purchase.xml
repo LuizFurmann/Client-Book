@@ -6,25 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.purchase.PurchaseFragment">
 
-    <TextView
-        android:id="@+id/tvTitlePurchase"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Minhas compras"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPurchases"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitlePurchase"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/row_order_history"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

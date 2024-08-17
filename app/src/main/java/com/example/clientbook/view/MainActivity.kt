@@ -71,20 +71,22 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
     private fun bottomNavigation(){
         binding.appHomeMain.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.homeId -> {
                     openFragment(HomeFragment())
+                    setTitle("")
                     true
                 }
                 R.id.purchasesId -> {
                     openFragment(PurchaseFragment())
+                    setTitle("Minhas compras")
                     true
                 }
                 R.id.favoritId -> {
                     openFragment(FavoriteFragment())
+                    setTitle("Favoritos")
                     true
                 }
                 else -> false
