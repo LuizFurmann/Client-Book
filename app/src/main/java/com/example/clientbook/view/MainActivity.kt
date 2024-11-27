@@ -18,6 +18,7 @@ import com.example.clientbook.view.favorite.FavoriteFragment
 import com.example.clientbook.view.home.HomeFragment
 import com.example.clientbook.view.purchase.PurchaseActivity
 import com.example.clientbook.view.purchase.PurchaseFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -32,31 +33,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setTitle("")
 
-        setupDrawer()
         openFragment(HomeFragment())
         bottomNavigation()
         repository.getClient().value
     }
 
-    private fun setupDrawer(){
-        val draweLayout : DrawerLayout = binding.drawerLayout
-        val navView : NavigationView = binding.navView
-
-        toggle = ActionBarDrawerToggle(this,draweLayout, R.string.open, R.string.close)
-        draweLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        navView.setNavigationItemSelectedListener {
-
-            when(it.itemId){
-                R.id.nav_client -> startClientActivity()
-                R.id.nav_auto_training -> Toast.makeText(this, "teste", Toast.LENGTH_SHORT).show()
-            }
-            true
-        }
-    }
 
     private fun startClientActivity(){
         Intent(this@MainActivity, PurchaseActivity::class.java).also{
@@ -72,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bottomNavigation(){
-        binding.appHomeMain.bottomNavigation.setOnItemSelectedListener { item ->
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.homeId -> {
                     openFragment(HomeFragment())
@@ -96,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun openFragment(fragment: Fragment) {
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.replace(binding.appHomeMain.container.id, fragment)
+        transaction.replace(binding.container.id, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }

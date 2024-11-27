@@ -30,6 +30,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        setHasOptionsMenu(true);
         return binding.root
     }
 
@@ -119,20 +121,20 @@ class HomeFragment : Fragment() {
         }
     }
 
-    @Override
-    override //For Fragments.
-     fun onCreateOptionsMenu (menu:Menu, inflater:MenuInflater){
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_cart, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.getItemId()) {
-            R.id.idCard -> {
-                Toast.makeText(requireContext(), "Carrinho", Toast.LENGTH_SHORT).show()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+//    @Override
+//    override //For Fragments.
+//     fun onCreateOptionsMenu (menu:Menu, inflater:MenuInflater){
+//        super.onCreateOptionsMenu(menu, inflater)
+//        inflater.inflate(R.menu.menu_cart, menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.getItemId()) {
+//            R.id.idCard -> {
+//                Toast.makeText(requireContext(), "Carrinho", Toast.LENGTH_SHORT).show()
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 }
