@@ -39,7 +39,7 @@
         <item name="titleTextColor">@color/white</item>
     </style>
 
-    <style name="Theme.ClientBook.TaskView">
+    <style name="Theme.ClientBook.TaskView" parent="Theme.AppCompat.DayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
