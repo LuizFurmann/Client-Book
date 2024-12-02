@@ -1,6 +1,7 @@
 package com.example.clientbook.view.purchase
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -13,15 +14,16 @@ import com.example.clientbook.databinding.RowOrderHistoryBinding
 import com.example.clientbook.model.Carousel
 import com.example.clientbook.model.Order
 import com.example.clientbook.model.Product
+import com.example.clientbook.view.product.ProductDetailsActivity
 import java.util.Locale
 
 class PurchaseAdapter : RecyclerView.Adapter<PurchaseAdapter.UserViewHolder>(), Filterable {
-    private val listItems: MutableList<Order>? = ArrayList()
-    private val listItemsFiltered: MutableList<Order> = ArrayList()
+    private val listItems: MutableList<Product>? = ArrayList()
+    private val listItemsFiltered: MutableList<Product> = ArrayList()
 
     var context: Context? = null
 
-    fun updateList(listItems: List<Order>?) {
+    fun updateList(listItems: List<Product>?) {
         if (this.listItems!!.size > 0) {
             this.listItems.clear()
             listItemsFiltered.clear()
@@ -54,12 +56,12 @@ class PurchaseAdapter : RecyclerView.Adapter<PurchaseAdapter.UserViewHolder>(), 
     private val FilterUser: Filter = object : Filter() {
         override fun performFiltering(charSequence: CharSequence): FilterResults {
             val searchText = charSequence.toString().lowercase(Locale.getDefault())
-            val newList: MutableList<Order> = ArrayList()
+            val newList: MutableList<Product> = ArrayList()
             if (searchText.length == 0 || searchText.isEmpty()) {
                 newList.addAll(listItemsFiltered)
             } else {
                 for (item in listItemsFiltered) {
-                    if (item.orderName.lowercase(Locale.getDefault()).contains(searchText)) {
+                    if (item.name.lowercase(Locale.getDefault()).contains(searchText)) {
                         newList.add(item)
                     }
                 }
@@ -71,7 +73,7 @@ class PurchaseAdapter : RecyclerView.Adapter<PurchaseAdapter.UserViewHolder>(), 
 
         override fun publishResults(charSequence: CharSequence, filterResults: FilterResults) {
             listItems!!.clear()
-            listItems.addAll((filterResults.values as Collection<Order>))
+            listItems.addAll((filterResults.values as Collection<Product>))
             notifyDataSetChanged()
         }
     }
@@ -80,8 +82,8 @@ class PurchaseAdapter : RecyclerView.Adapter<PurchaseAdapter.UserViewHolder>(), 
         RecyclerView.ViewHolder(binding.getRoot()) {
         var tvProductName: TextView = binding.tvProductName
 
-        fun bindData(item: Order){
-            tvProductName.setText(item.orderName)
+        fun bindData(item: Product){
+            tvProductName.setText(item.name)
         }
     }
 }

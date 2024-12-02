@@ -1,6 +1,7 @@
 package com.example.clientbook.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Product(
 //    @SerializedName("productId")
@@ -10,4 +11,4 @@ data class Product(
     var type: String,
     var price: Double,
     var favorite: Boolean,
-)
+): Serializable

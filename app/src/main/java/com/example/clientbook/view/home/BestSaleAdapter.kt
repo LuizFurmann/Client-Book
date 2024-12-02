@@ -1,6 +1,7 @@
 package com.example.clientbook.view.home
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -13,6 +14,7 @@ import com.example.clientbook.databinding.RowBestSaleBinding
 import com.example.clientbook.databinding.RowClientBinding
 import com.example.clientbook.model.Carousel
 import com.example.clientbook.model.Product
+import com.example.clientbook.view.product.ProductDetailsActivity
 
 class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>() {
 
@@ -34,6 +36,13 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
     override fun onBindViewHolder(holder: BestSaleAdapter.BestSaleViewHolder, position: Int) {
         var currentItem = listProduct[position]
         holder.bindData(currentItem)
+
+        holder.itemView.setOnClickListener {
+            Intent(holder.itemView.context, ProductDetailsActivity::class.java).also{
+                it.putExtra("Product", currentItem)
+                holder.itemView.context.startActivity(it)
+            }
+        }
 
         if(currentItem.favorite){
             holder.btnFavorite.setImageResource(R.drawable.ic_favorite_false)

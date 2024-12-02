@@ -12,6 +12,7 @@ import com.example.clientbook.databinding.FragmentHomeBinding
 import com.example.clientbook.databinding.FragmentPurchaseBinding
 import com.example.clientbook.model.Carousel
 import com.example.clientbook.model.Order
+import com.example.clientbook.model.Product
 import com.example.clientbook.view.home.BestSaleAdapter
 import java.util.UUID
 
@@ -38,59 +39,59 @@ class PurchaseFragment : Fragment() {
 
     fun setupRecyclerView(){
 
-        val orderList = arrayListOf(
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 1",
-                "20/08/2024",
-            ),
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 2",
-                "20/08/2024",
-            ),
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 3",
-                "17/08/2024",
-            ),
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 4",
-                "15/08/2024",
-            ),
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 5",
-                "15/08/2024",
-            ),
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 6",
-                "14/08/2024",
-            ),
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 7",
-                "14/08/2024",
-            ),
-            Order(
-                UUID.randomUUID().toString(),
-                "Produto 8",
-                "12/08/2024",
-            ),
-
-        )
+//        val orderList = arrayListOf(
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 1",
+//                "20/08/2024",
+//            ),
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 2",
+//                "20/08/2024",
+//            ),
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 3",
+//                "17/08/2024",
+//            ),
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 4",
+//                "15/08/2024",
+//            ),
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 5",
+//                "15/08/2024",
+//            ),
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 6",
+//                "14/08/2024",
+//            ),
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 7",
+//                "14/08/2024",
+//            ),
+//            Order(
+//                UUID.randomUUID().toString(),
+//                "Produto 8",
+//                "12/08/2024",
+//            ),
+//
+//        )
 
         val layoutManager = LinearLayoutManager(requireContext())
         binding.rvPurchases.layoutManager = layoutManager;
         binding.rvPurchases.adapter = purchaseAdapter
         binding.rvPurchases.setHasFixedSize(true)
 
-        updateList(orderList)
+//        updateList(orderList)
     }
 
-    fun updateList(orders: List<Order>){
+    fun updateList(orders: List<Product>){
         if (orders.isEmpty()) {
             binding.rvPurchases.visibility = View.GONE
 //            binding.myTrainingTittle.visibility = View.GONE
