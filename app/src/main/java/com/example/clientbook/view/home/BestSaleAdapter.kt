@@ -61,9 +61,11 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
     inner class BestSaleViewHolder(binding: RowBestSaleBinding) : RecyclerView.ViewHolder(binding.getRoot()) {
         var tvProductName: TextView = binding.tvProductName
         var btnFavorite: ImageView = binding.btnFavorite
+        var tvPrice : TextView = binding.tvPrice
 
         fun bindData(item: Product){
             tvProductName.setText(item.name)
+            tvPrice.setText("R$${item.price}")
         }
     }
 }

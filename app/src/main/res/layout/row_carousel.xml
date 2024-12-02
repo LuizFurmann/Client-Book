@@ -6,11 +6,17 @@
     android:layout_marginHorizontal="4dp"
     app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        />
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
 
 </com.google.android.material.carousel.MaskableFrameLayout>
