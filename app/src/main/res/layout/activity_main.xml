@@ -25,7 +25,6 @@
         android:layout_gravity="bottom"
         android:background="@drawable/bg_rounded"
         app:elevation="2dp"
-        app:itemIconSize="20dp"
         app:itemIconTint="#FFFFFF"
         app:itemRippleColor="@android:color/darker_gray"
         app:itemTextColor="#CBCBCB"

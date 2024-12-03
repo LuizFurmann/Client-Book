@@ -70,6 +70,11 @@ class MainActivity : AppCompatActivity() {
                     setTitle("Favoritos")
                     true
                 }
+                R.id.cartId -> {
+                    openFragment(FavoriteFragment())
+                    setTitle("Carrinho")
+                    true
+                }
                 else -> false
             }
         }

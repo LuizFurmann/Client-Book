@@ -26,6 +26,10 @@ class ProductDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         onBtnFilterClick()
+
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun onBtnFilterClick() {
