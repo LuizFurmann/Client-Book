@@ -1,5 +1,6 @@
 package com.example.clientbook.view.product
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -7,12 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.example.clientbook.R
 import com.example.clientbook.databinding.ActivityProductDetailsBinding
+import com.example.clientbook.model.Product
 
 class ProductDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityProductDetailsBinding
+    lateinit var product: Product
+    private val REQUEST_IMAGE = 100
+    private var profilePicturePath: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityProductDetailsBinding.inflate(layoutInflater)

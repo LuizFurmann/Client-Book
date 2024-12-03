@@ -49,6 +49,11 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <style name="NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
 
     <style name="Theme.ClientBook.NoActionBar">
         <item name="windowActionBar">false</item>
