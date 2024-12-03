@@ -122,7 +122,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,6 +157,47 @@
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="@+id/tvChoseSizeTitle"
             app:layout_constraintTop_toBottomOf="@+id/tvChoseSizeTitle" />
+
+        <TextView
+            android:id="@+id/tvTitleColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Escolha o tamanho"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="50dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleColor"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="50dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#3678A4"
+            app:layout_constraintEnd_toStartOf="@+id/color1"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleColor"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="50dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/color2"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleColor"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
