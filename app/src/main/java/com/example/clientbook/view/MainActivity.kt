@@ -14,7 +14,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.clientbook.R
 import com.example.clientbook.databinding.ActivityMainBinding
 import com.example.clientbook.network.RetrofitRepository
-import com.example.clientbook.view.cart.CartFragment
 import com.example.clientbook.view.favorite.FavoriteFragment
 import com.example.clientbook.view.home.HomeFragment
 import com.example.clientbook.view.purchase.PurchaseActivity
@@ -69,11 +68,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.favoritId -> {
                     openFragment(FavoriteFragment())
                     setTitle("Favoritos")
-                    true
-                }
-                R.id.cartId -> {
-                    openFragment(CartFragment())
-                    setTitle("Carrinho")
                     true
                 }
                 else -> false

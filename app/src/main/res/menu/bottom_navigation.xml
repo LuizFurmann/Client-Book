@@ -15,9 +15,4 @@
         android:icon="@drawable/ic_favorite"
         android:title="Favoritos"/>
 
-    <item
-        android:id="@+id/cartId"
-        android:icon="@drawable/ic_cart"
-        android:title="Carrinho"/>
-
 </menu>

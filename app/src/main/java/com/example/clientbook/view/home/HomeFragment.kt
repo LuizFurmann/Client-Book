@@ -1,5 +1,6 @@
 package com.example.clientbook.view.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -14,6 +15,7 @@ import com.example.clientbook.R
 import com.example.clientbook.databinding.FragmentHomeBinding
 import com.example.clientbook.model.Carousel
 import com.example.clientbook.model.Product
+import com.example.clientbook.view.cart.CartActivity
 import java.util.UUID
 
 
@@ -40,6 +42,12 @@ class HomeFragment : Fragment() {
 
         setupCarousel()
         setupBestSale()
+
+        binding.btnCart.setOnClickListener {
+            Intent(requireContext(), CartActivity::class.java).also{
+                startActivity(it)
+            }
+        }
     }
 
     private fun setupCarousel(){
