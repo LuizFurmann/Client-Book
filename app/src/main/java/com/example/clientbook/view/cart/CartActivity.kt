@@ -25,7 +25,14 @@ class CartActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupRecyclerview()
+        setupEventClick()
 
+    }
+
+    fun setupEventClick(){
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
         binding.arrowButton.setOnClickListener { view ->
             if (binding.hiddenView.getVisibility() === View.VISIBLE) {
                 TransitionManager.beginDelayedTransition(binding.baseCardview, AutoTransition())
