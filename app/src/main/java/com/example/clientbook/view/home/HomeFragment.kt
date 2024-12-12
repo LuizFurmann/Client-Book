@@ -113,14 +113,6 @@ class HomeFragment : Fragment() {
                 130.99,
                 false
             ),
-            Product(
-                UUID.randomUUID().toString(),
-                "Produto 5",
-                "Detalhes do produto",
-                "Tipo 5",
-                120.99,
-                true
-            ),
         )
 
 

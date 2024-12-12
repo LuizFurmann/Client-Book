@@ -4,14 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clientbook.R
-import com.example.clientbook.databinding.RowBestSaleBinding
 import com.example.clientbook.databinding.RowProductCartBinding
 import com.example.clientbook.model.Product
-import com.example.clientbook.view.home.BestSaleAdapter
 import com.example.clientbook.view.product.ProductDetailsActivity
 
 class ProductCartAdapter : RecyclerView.Adapter<ProductCartAdapter.BestSaleViewHolder>() {

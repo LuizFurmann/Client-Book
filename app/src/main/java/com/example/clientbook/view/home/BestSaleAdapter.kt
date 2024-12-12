@@ -44,6 +44,8 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
             }
         }
 
+
+
         if(currentItem.favorite){
             holder.btnFavorite.setImageResource(R.drawable.ic_favorite_false)
             currentItem.favorite = false
@@ -71,10 +73,21 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
         var tvProductName: TextView = binding.tvProductName
         var btnFavorite: ImageView = binding.btnFavorite
         var tvPrice : TextView = binding.tvPrice
+        var image : ImageView = binding.imgProduct
 
         fun bindData(item: Product){
             tvProductName.setText(item.name)
             tvPrice.setText("R$${item.price}")
+
+            if(item.name == "Produto 1"){
+                image.setBackgroundResource(R.drawable.clothin1)
+            }else if(item.name == "Produto 2"){
+                image.setBackgroundResource(R.drawable.clothing2)
+            }else if(item.name == "Produto 3"){
+                image.setBackgroundResource(R.drawable.clothing3)
+            }else if(item.name == "Produto 4"){
+                image.setBackgroundResource(R.drawable.clothing4)
+            }
         }
     }
 }
