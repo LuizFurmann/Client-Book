@@ -16,37 +16,31 @@ import java.util.UUID
 
 class CartActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityCartBinding
+    private lateinit var binding: ActivityCartBinding
     private val bestSaleAdapter = ProductCartAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCartBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
 
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+            view.setPadding(
+                0,
+                bars.top,     // status bar
+                0,
+                bars.bottom   // navigation bar
+            )
+            insets
+        }
+
         setupRecyclerview()
-        setupEventClick()
-
     }
 
-    fun setupEventClick(){
-        binding.btnBack.setOnClickListener {
-            finish()
-        }
-        binding.arrowButton.setOnClickListener { view ->
-            if (binding.hiddenView.getVisibility() === View.VISIBLE) {
-                TransitionManager.beginDelayedTransition(binding.baseCardview, AutoTransition())
-                binding.hiddenView.setVisibility(View.GONE)
-                binding.arrowButton.setImageResource(R.drawable.ic_down)
-            } else {
-                TransitionManager.beginDelayedTransition(binding.baseCardview, AutoTransition())
-                binding.hiddenView.setVisibility(View.VISIBLE)
-                binding.arrowButton.setImageResource(com.example.clientbook.R.drawable.ic_up)
-            }
-        }
-    }
-
-    fun setupRecyclerview(){
+    fun setupRecyclerview() {
         val productList = arrayListOf(
             Product(
                 UUID.randomUUID().toString(),

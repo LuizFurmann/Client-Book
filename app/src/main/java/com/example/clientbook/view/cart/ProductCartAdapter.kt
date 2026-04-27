@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clientbook.R
 import com.example.clientbook.databinding.RowProductCartBinding
 import com.example.clientbook.model.Product
 import com.example.clientbook.view.product.ProductDetailsActivity
@@ -47,9 +49,25 @@ class ProductCartAdapter : RecyclerView.Adapter<ProductCartAdapter.BestSaleViewH
         var tvProductName: TextView = binding.tvProductName
         var tvPrice: TextView = binding.tvProductPrice
 
+        var image : ImageView = binding.imgProduct
+
         fun bindData(item: Product){
             tvProductName.setText(item.name)
             tvPrice.setText("R$${item.price}")
+
+            if(item.name == "Produto 1"){
+                image.setBackgroundResource(R.drawable.cloth1)
+            }else if(item.name == "Produto 2"){
+                image.setBackgroundResource(R.drawable.cloth2)
+            }else if(item.name == "Produto 3"){
+                image.setBackgroundResource(R.drawable.cloth3)
+            }else if(item.name == "Produto 4"){
+                image.setBackgroundResource(R.drawable.cloth4)
+            } else if(item.name == "Produto 5"){
+                image.setBackgroundResource(R.drawable.cloth5)
+            } else if(item.name == "Produto 6"){
+                image.setBackgroundResource(R.drawable.cloth6)
+            }
         }
     }
 }
