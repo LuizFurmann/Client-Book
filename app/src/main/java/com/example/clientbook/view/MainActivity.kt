@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         window.statusBarColor = Color.parseColor("#FFFFFF")
-        window.navigationBarColor = ContextCompat.getColor(this, R.color.theme)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.darkGrey)
         WindowCompat.getInsetsController(window, window.decorView)
             .isAppearanceLightStatusBars = true
         setTitle("")
