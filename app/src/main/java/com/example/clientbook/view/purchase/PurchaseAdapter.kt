@@ -1,7 +1,6 @@
 package com.example.clientbook.view.purchase
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -9,14 +8,9 @@ import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.clientbook.R
-import com.example.clientbook.databinding.RowClientBinding
 import com.example.clientbook.databinding.RowOrderHistoryBinding
-import com.example.clientbook.model.Carousel
 import com.example.clientbook.model.Order
-import com.example.clientbook.model.Product
-import com.example.clientbook.view.product.ProductDetailsActivity
 import java.util.Locale
 
 class PurchaseAdapter : RecyclerView.Adapter<PurchaseAdapter.UserViewHolder>(), Filterable {

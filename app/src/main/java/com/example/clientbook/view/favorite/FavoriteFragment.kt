@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.clientbook.R
 import com.example.clientbook.databinding.FragmentFavoriteBinding
 import com.example.clientbook.model.Product
 import com.example.clientbook.view.home.BestSaleAdapter
@@ -93,10 +92,7 @@ class FavoriteFragment : Fragment() {
 
     private fun updateList(productList: List<Product>) {
         if (productList.isEmpty()) {
-
-//            binding.rvExercise.visibility = View.GONE
-//            binding.myExercisesTittle.visibility = View.GONE
-//            binding.emptyExerciseList.visibility = View.VISIBLE
+            //TODO image to empty list
         } else {
 
             bestSaleAdapter.updateList(productList)

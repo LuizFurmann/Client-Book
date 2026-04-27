@@ -30,9 +30,9 @@ class CartActivity : AppCompatActivity() {
 
             view.setPadding(
                 0,
-                bars.top,     // status bar
+                bars.top,
                 0,
-                bars.bottom   // navigation bar
+                bars.bottom
             )
             insets
         }
@@ -79,10 +79,7 @@ class CartActivity : AppCompatActivity() {
 
     private fun updateList(productList: List<Product>) {
         if (productList.isEmpty()) {
-
-//            binding.rvExercise.visibility = View.GONE
-//            binding.myExercisesTittle.visibility = View.GONE
-//            binding.emptyExerciseList.visibility = View.VISIBLE
+            //TODO image to empty list
         } else {
 
             bestSaleAdapter.updateList(productList)

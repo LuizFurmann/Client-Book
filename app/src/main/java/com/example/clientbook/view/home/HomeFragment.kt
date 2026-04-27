@@ -3,12 +3,8 @@ package com.example.clientbook.view.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.clientbook.R
@@ -18,13 +14,10 @@ import com.example.clientbook.model.Product
 import com.example.clientbook.view.cart.CartActivity
 import java.util.UUID
 
-
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-    private val carouselAdapter = CarouselAdapter()
     private val bestSaleAdapter = BestSaleAdapter()
 
     override fun onCreateView(
@@ -73,7 +66,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupBestSale(){
-        val rvBestSale = binding.rvBestSale
 
         val productList = arrayListOf(
             Product(
@@ -126,8 +118,6 @@ class HomeFragment : Fragment() {
             ),
         )
 
-
-
         val layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvBestSale.layoutManager = layoutManager;
         binding.rvBestSale.adapter = bestSaleAdapter
@@ -138,30 +128,10 @@ class HomeFragment : Fragment() {
 
     private fun updateList(productList: List<Product>) {
         if (productList.isEmpty()) {
-
-//            binding.rvExercise.visibility = View.GONE
-//            binding.myExercisesTittle.visibility = View.GONE
-//            binding.emptyExerciseList.visibility = View.VISIBLE
+            //TODO image to empty list
         } else {
 
             bestSaleAdapter.updateList(productList)
         }
     }
-
-//    @Override
-//    override //For Fragments.
-//     fun onCreateOptionsMenu (menu:Menu, inflater:MenuInflater){
-//        super.onCreateOptionsMenu(menu, inflater)
-//        inflater.inflate(R.menu.menu_cart, menu)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return when (item.getItemId()) {
-//            R.id.idCard -> {
-//                Toast.makeText(requireContext(), "Carrinho", Toast.LENGTH_SHORT).show()
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
 }

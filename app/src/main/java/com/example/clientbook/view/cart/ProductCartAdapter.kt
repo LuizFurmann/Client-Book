@@ -15,7 +15,6 @@ import com.example.clientbook.view.product.ProductDetailsActivity
 class ProductCartAdapter : RecyclerView.Adapter<ProductCartAdapter.BestSaleViewHolder>() {
 
     private val listProduct: ArrayList<Product> = ArrayList()
-    private lateinit var context : Context
 
     fun updateList(listItems : List<Product>?){
         this.listProduct.clear()

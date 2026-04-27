@@ -5,15 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.clientbook.R
-import com.example.clientbook.databinding.FragmentHomeBinding
 import com.example.clientbook.databinding.FragmentPurchaseBinding
-import com.example.clientbook.model.Carousel
 import com.example.clientbook.model.Order
-import com.example.clientbook.model.Product
-import com.example.clientbook.view.home.BestSaleAdapter
 import java.util.UUID
 
 class PurchaseFragment : Fragment() {
@@ -73,8 +67,7 @@ class PurchaseFragment : Fragment() {
     fun updateList(orders: List<Order>){
         if (orders.isEmpty()) {
             binding.rvPurchases.visibility = View.GONE
-//            binding.myTrainingTittle.visibility = View.GONE
-//            binding.emptyTrainingList.visibility = View.VISIBLE
+            //TODO image to empty list
         } else {
             binding.rvPurchases.visibility = View.VISIBLE
 
