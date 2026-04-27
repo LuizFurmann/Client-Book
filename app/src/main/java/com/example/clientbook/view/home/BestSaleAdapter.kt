@@ -79,17 +79,17 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
             tvProductName.setText(item.name)
             tvPrice.setText("R$${item.price}")
 
-            if(item.name == "Produto 1"){
+            if(item.name == "Camiseta feminina"){
                 image.setBackgroundResource(R.drawable.cloth1)
-            }else if(item.name == "Produto 2"){
+            }else if(item.name == "Camiseta masculina"){
                 image.setBackgroundResource(R.drawable.cloth2)
-            }else if(item.name == "Produto 3"){
+            }else if(item.name == "Chapéu de praia"){
                 image.setBackgroundResource(R.drawable.cloth3)
-            }else if(item.name == "Produto 4"){
+            }else if(item.name == "Calça jeans feminina"){
                 image.setBackgroundResource(R.drawable.cloth4)
-            } else if(item.name == "Produto 5"){
+            } else if(item.name == "Camisa masculina"){
                 image.setBackgroundResource(R.drawable.cloth5)
-            } else if(item.name == "Produto 6"){
+            } else if(item.name == "Camisa masculina cinza"){
                 image.setBackgroundResource(R.drawable.cloth6)
             }
         }

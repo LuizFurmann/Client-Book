@@ -90,14 +90,18 @@ class PurchaseAdapter : RecyclerView.Adapter<PurchaseAdapter.UserViewHolder>(), 
             tvProductName.setText(item.orderName)
             tvOrderDate.setText(item.orderDatePurchase)
 
-            if(item.orderName == "Produto 1"){
+            if(item.orderName == "Camiseta feminina"){
                 image.setBackgroundResource(R.drawable.cloth1)
-            }else if(item.orderName == "Produto 5"){
+            }else if(item.orderName == "Camiseta masculina"){
                 image.setBackgroundResource(R.drawable.cloth2)
-            }else if(item.orderName == "Produto 3"){
+            }else if(item.orderName == "Chapéu de praia"){
                 image.setBackgroundResource(R.drawable.cloth3)
-            }else if(item.orderName == "Produto 6"){
+            }else if(item.orderName == "Calça jeans feminina"){
                 image.setBackgroundResource(R.drawable.cloth4)
+            } else if(item.orderName == "Camisa masculina"){
+                image.setBackgroundResource(R.drawable.cloth5)
+            } else if(item.orderName == "Camisa masculina cinza"){
+                image.setBackgroundResource(R.drawable.cloth6)
             }
         }
     }

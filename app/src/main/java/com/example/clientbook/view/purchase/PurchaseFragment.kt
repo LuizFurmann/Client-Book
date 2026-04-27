@@ -42,22 +42,22 @@ class PurchaseFragment : Fragment() {
         val orderList = arrayListOf(
             Order(
                 UUID.randomUUID().toString(),
-                "Produto 3",
+                "Chapéu de praia",
                 "26/04/2026",
             ),
             Order(
                 UUID.randomUUID().toString(),
-                "Produto 6",
+                "Calça jeans feminina",
                 "15/02/2026",
             ),
             Order(
                 UUID.randomUUID().toString(),
-                "Produto 1",
+                "Camiseta feminina",
                 "20/12/2025",
             ),
             Order(
                 UUID.randomUUID().toString(),
-                "Produto 5",
+                "Camiseta masculina",
                 "20/12/2025",
             ),
         )

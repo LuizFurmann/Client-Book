@@ -44,7 +44,7 @@ class CartActivity : AppCompatActivity() {
         val productList = arrayListOf(
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 1",
+                "Camiseta feminina",
                 "Detalhes do produto",
                 "Tipo A",
                 100.00,
@@ -52,7 +52,7 @@ class CartActivity : AppCompatActivity() {
             ),
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 2",
+                "Camiseta masculina",
                 "Detalhes do produto",
                 "Tipo B",
                 70.00,
@@ -60,10 +60,10 @@ class CartActivity : AppCompatActivity() {
             ),
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 3",
+                "Chapéu de praia",
                 "Detalhes do produto",
                 "Tipo 5",
-                150.00,
+                50.00,
                 true
             ),
 

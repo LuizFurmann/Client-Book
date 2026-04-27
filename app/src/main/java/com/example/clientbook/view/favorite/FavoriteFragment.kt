@@ -43,7 +43,7 @@ class FavoriteFragment : Fragment() {
         val productList = arrayListOf(
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 1",
+                "Camiseta feminina",
                 "Detalhes do produto",
                 "Tipo A",
                 100.00,
@@ -51,7 +51,7 @@ class FavoriteFragment : Fragment() {
             ),
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 2",
+                "Camiseta masculina",
                 "Detalhes do produto",
                 "Tipo B",
                 70.00,
@@ -59,15 +59,15 @@ class FavoriteFragment : Fragment() {
             ),
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 3",
+                "Chapéu de praia",
                 "Detalhes do produto",
                 "Tipo 5",
-                150.00,
+                50.00,
                 false
             ),
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 4",
+                "Calça jeans feminina",
                 "Detalhes do produto",
                 "Tipo 5",
                 130.99,
@@ -75,7 +75,7 @@ class FavoriteFragment : Fragment() {
             ),
             Product(
                 UUID.randomUUID().toString(),
-                "Produto 5",
+                "Camisa masculina",
                 "Detalhes do produto",
                 "Tipo 5",
                 120.99,
