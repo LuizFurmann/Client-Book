@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.home.HomeFragment"
     android:background="@color/white">
@@ -104,7 +105,7 @@
         android:id="@+id/rvCarousel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/searchBoxContainer"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +114,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
         android:background="#FBFBFB"
         app:layout_constraintTop_toBottomOf="@+id/rvCarousel"
         app:layout_constraintStart_toStartOf="parent"
