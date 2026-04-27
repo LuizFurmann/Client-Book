@@ -23,74 +23,23 @@ class ProductDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityProductDetailsBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
 
-        onBtnFilterClick()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 
-        binding.btnBack.setOnClickListener {
-            finish()
+            view.setPadding(
+                0,
+                bars.top,     // status bar
+                0,
+                bars.bottom   // navigation bar
+            )
+            insets
         }
+
     }
 
-    private fun onBtnFilterClick() {
-        binding.includeBtns.btnP.setOnClickListener{
-            val selectedFilter = "P"
-            updateFilterIcons(selectedFilter)
-
-        }
-        binding.includeBtns.btnM.setOnClickListener{
-            val selectedFilter = "M"
-            updateFilterIcons(selectedFilter)
-
-
-        }
-        binding.includeBtns.btnG.setOnClickListener{
-            val selectedFilter = "G"
-            updateFilterIcons(selectedFilter)
-
-
-        }
-        binding.includeBtns.btnGG.setOnClickListener{
-            val selectedFilter = "GG"
-            updateFilterIcons(selectedFilter)
-
-
-//            newExercise(selectedFilter)
-        }
-        binding.includeBtns.btnEG.setOnClickListener{
-            val selectedFilter = "EG"
-            updateFilterIcons(selectedFilter)
-
-        }
-    }
-
-    private fun updateFilterIcons(newFilter: String) {
-        updateBtnFilter(
-            "P",
-            newFilter,
-            binding.includeBtns.btnP
-        )
-        updateBtnFilter(
-            "M",
-            newFilter,
-            binding.includeBtns.btnM
-        )
-        updateBtnFilter(
-            "G",
-            newFilter,
-            binding.includeBtns.btnG
-        )
-        updateBtnFilter(
-            "GG",
-            newFilter,
-            binding.includeBtns.btnGG
-        )
-        updateBtnFilter(
-            "EG",
-            newFilter,
-            binding.includeBtns.btnEG
-        )
-    }
 
     private fun updateBtnFilter(filter: String, filterSelect: String, button: TextView) {
         button.setTextColor(
