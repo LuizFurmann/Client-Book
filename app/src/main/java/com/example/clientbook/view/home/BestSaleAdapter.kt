@@ -80,13 +80,17 @@ class BestSaleAdapter : RecyclerView.Adapter<BestSaleAdapter.BestSaleViewHolder>
             tvPrice.setText("R$${item.price}")
 
             if(item.name == "Produto 1"){
-                image.setBackgroundResource(R.drawable.clothin1)
+                image.setBackgroundResource(R.drawable.cloth1)
             }else if(item.name == "Produto 2"){
-                image.setBackgroundResource(R.drawable.clothing2)
+                image.setBackgroundResource(R.drawable.cloth2)
             }else if(item.name == "Produto 3"){
-                image.setBackgroundResource(R.drawable.clothing3)
+                image.setBackgroundResource(R.drawable.cloth3)
             }else if(item.name == "Produto 4"){
-                image.setBackgroundResource(R.drawable.clothing4)
+                image.setBackgroundResource(R.drawable.cloth4)
+            } else if(item.name == "Produto 5"){
+                image.setBackgroundResource(R.drawable.cloth5)
+            } else if(item.name == "Produto 6"){
+                image.setBackgroundResource(R.drawable.cloth6)
             }
         }
     }
