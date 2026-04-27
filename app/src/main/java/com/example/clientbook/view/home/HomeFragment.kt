@@ -58,17 +58,12 @@ class HomeFragment : Fragment() {
             Carousel(
                 UUID.randomUUID().toString(),
                 "PRIMEIRA",
-                "https://i.postimg.cc/Vdbzgg06/banner1.jpg"
+                R.drawable.banner1
             ),
             Carousel(
                 UUID.randomUUID().toString(),
                 "segunda",
-                "https://i.postimg.cc/cJ4pdXL8/banner2.jpg"
-            ),
-            Carousel(
-                UUID.randomUUID().toString(),
-                "terceira",
-                "https://i.postimg.cc/PxvFqcsN/banner3.jpg"
+                R.drawable.banner2
             ),
         )
 
